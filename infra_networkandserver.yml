@@ -263,10 +263,6 @@ Resources:
                 FromPort: 80
                 ToPort: 80
                 CidrIp: 0.0.0.0/0
-            -   IpProtocol: tcp
-                FromPort: 22
-                ToPort: 22
-                CidrIp: 0.0.0.0/0
             SecurityGroupEgress:
             -   IpProtocol: tcp
                 FromPort: 0
@@ -287,7 +283,6 @@ Resources:
                     aws s3 cp s3://shady-55/udacity.zip .
                     unzip -o udacity.zip
             ImageId: ami-08d4ac5b634553e16
-            KeyName: vockey
             IamInstanceProfile: !Ref ProfileWithRolesForOurApp
             SecurityGroups:
             -   Ref: WebServerSecGroup
